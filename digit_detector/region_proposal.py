@@ -3,8 +3,10 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
+import os
+current_path = os.path.realpath(__file__)
 import sys
-sys.path.append(".")
+sys.path.append(current_path)
 
 import crop
 import show
