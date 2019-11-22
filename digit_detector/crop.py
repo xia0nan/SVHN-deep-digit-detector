@@ -1,9 +1,8 @@
 #-*- coding: utf-8 -*-
 from abc import ABCMeta, abstractmethod
 
-class _Cropper:
+class _Cropper(metaclass=ABCMeta):
     """ This class is an abstract class. """
-    __metaclass__ = ABCMeta
     
     def __init__(self):
         pass

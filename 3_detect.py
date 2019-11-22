@@ -36,10 +36,3 @@ if __name__ == "__main__":
         img = cv2.imread(img_file)
         
         digit_spotter.run(img, threshold=0.5, do_nms=True, nms_threshold=0.1)
-
-
-
-
-
-
-

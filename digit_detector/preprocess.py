@@ -6,9 +6,7 @@ import cv2
 import numpy as np
 
 
-class _Preprocessor:
-    __metaclass__ = ABCMeta
-    
+class _Preprocessor(metaclass=ABCMeta):
     def __init__(self):
         pass
 
@@ -26,9 +24,7 @@ class _Preprocessor:
         return gray_image
 
 
-class _TrainTimePreprocessor(_Preprocessor):
-    __metaclass__ = ABCMeta
-    
+class _TrainTimePreprocessor(_Preprocessor, metaclass=ABCMeta):
     def __init__(self):
         pass
     @abstractmethod
@@ -75,9 +71,7 @@ class GrayImgTrainPreprocessor(_TrainTimePreprocessor):
         return X_train, X_val, Y_train, Y_val, mean_value
 
 
-class _RunTimePreprocessor(_Preprocessor):
-    __metaclass__ = ABCMeta
-    
+class _RunTimePreprocessor(_Preprocessor, metaclass=ABCMeta):
     def __init__(self, mean_value=None):
         self._mean_value = mean_value
     
@@ -112,6 +106,3 @@ class GrayImgPreprocessor(_RunTimePreprocessor):
 class NonePreprocessor(_RunTimePreprocessor):
     def run(self, patches):
         return patches
-    
-    
-    

@@ -1,4 +1,3 @@
-
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Convolution2D, MaxPooling2D
@@ -69,5 +68,3 @@ def train_detector(X_train, X_test, Y_train, Y_test, nb_filters = 32, batch_size
     print('Test score:', score[0])
     print('Test accuracy:', score[1])
     model.save(save_file)  
-
-

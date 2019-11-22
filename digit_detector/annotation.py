@@ -45,7 +45,3 @@ class SvhnAnnotation(Annotation):
             raise ValueError("Annotation file should be sorted!!!!")
         else:
             return annotation
-
-
-        
-

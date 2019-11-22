@@ -120,7 +120,3 @@ class OverlapCalculator:
         # (n_truth, n_boxes)
         ious_for_each_gt = np.array(ious_for_each_gt)
         return ious_for_each_gt
-        
-
-
-

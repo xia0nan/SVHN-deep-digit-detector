@@ -56,9 +56,3 @@ if __name__ == "__main__":
     evaluator = eval.Evaluator(det, annotator, rp.OverlapCalculator())
     recall, precision, f1_score = evaluator.run(img_files, do_nms=False)
     #recall value : 0.630004601933, precision value : 0.0452547023239, f1_score : 0.0844436220084
-
-
-
-
-
-

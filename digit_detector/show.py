@@ -87,6 +87,3 @@ def plot_images(images, titles=None):
             plt.title("{0:.2f}".format(titles[i]))
         plt.xticks([]), plt.yticks([])
     plt.show()
-
-
-

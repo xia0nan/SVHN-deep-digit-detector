@@ -105,5 +105,3 @@ dataset = dsf.getAllDigitStructure_ByDigit()
 fout = open(options.filePrefix + ".json",'w')
 fout.write(JSONEncoder(indent = True).encode(dataset))
 fout.close()
-
-

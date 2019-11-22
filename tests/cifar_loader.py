@@ -1,11 +1,10 @@
-
-import cPickle
+import pickle
 import numpy as np
 import cv2
 
 def unpickle(file):
     fo = open(file, 'rb')
-    dict = cPickle.load(fo)
+    dict = pickle.load(fo)
     fo.close()
     return dict
 
@@ -22,4 +21,3 @@ images = np.swapaxes(images, 1, 3)
 cv2.imshow("", images[1000])
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-

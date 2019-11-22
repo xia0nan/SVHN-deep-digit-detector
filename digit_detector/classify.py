@@ -4,9 +4,7 @@ from abc import ABCMeta, abstractmethod
 import keras
 import numpy as np
 
-class Classifier:
-    
-    __metaclass__ = ABCMeta
+class Classifier(metaclass=ABCMeta):
     
     def __init__(self):
         pass
