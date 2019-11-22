@@ -11,6 +11,9 @@ import digit_detector.annotation as ann
 import digit_detector.show as show
 import digit_detector.region_proposal as rp
 
+improt sys
+sys.path.append("./digit_detector")
+
 N_IMAGES = None
 DIR = '../datasets/svhn/train'
 ANNOTATION_FILE = "../datasets/svhn/train/digitStruct.json"
