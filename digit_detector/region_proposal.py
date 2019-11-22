@@ -61,7 +61,7 @@ class MserRegionProposer(_RegionProposer):
     def detect(self, img):
         gray = self._to_gray(img)
         mser = cv2.MSER_create(_delta = 1)
-        regions = mser.detect(gray, None)
+        regions, boxes = mser.detectRegions(gray)
         bounding_boxes = self._get_boxes(regions)
         regions = Regions(img, bounding_boxes)
         return regions
