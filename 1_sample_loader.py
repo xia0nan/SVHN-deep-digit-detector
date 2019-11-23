@@ -11,15 +11,13 @@ import digit_detector.annotation as ann
 import digit_detector.show as show
 import digit_detector.region_proposal as rp
 
-import sys
-sys.path.append("./digit_detector")
-
 N_IMAGES = None
 DIR = '../datasets/svhn/train'
 ANNOTATION_FILE = "../datasets/svhn/train/digitStruct.json"
 NEG_OVERLAP_THD = 0.05
 POS_OVERLAP_THD = 0.6
 PATCH_SIZE = (32,32)
+
 
 if __name__ == "__main__":
 
