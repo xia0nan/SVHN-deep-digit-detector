@@ -23,11 +23,11 @@ PATCH_SIZE = (32,32)
 
 if __name__ == "__main__":
 
-    # 1. file 을 load
+    # 1. file load
     files = file_io.list_files(directory=DIR, pattern="*.png", recursive_option=False, n_files_to_sample=N_IMAGES, random_order=False)
     n_files = len(files)
     n_train_files = int(n_files * 0.8)
-    print(n_train_files)
+    print("n_train_files", n_train_files)
     
     extractor = extractor_.Extractor(rp.MserRegionProposer(), ann.SvhnAnnotation(ANNOTATION_FILE), rp.OverlapCalculator())
     train_samples, train_labels = extractor.extract_patch(files[:n_train_files], PATCH_SIZE, POS_OVERLAP_THD, NEG_OVERLAP_THD)
@@ -35,10 +35,10 @@ if __name__ == "__main__":
     extractor = extractor_.Extractor(rp.MserRegionProposer(), ann.SvhnAnnotation(ANNOTATION_FILE), rp.OverlapCalculator())
     validation_samples, validation_labels = extractor.extract_patch(files[n_train_files:], PATCH_SIZE, POS_OVERLAP_THD, NEG_OVERLAP_THD)
 
-    print(train_samples.shape, train_labels.shape)
-    print(validation_samples.shape, validation_labels.shape)
+    print("train_samples.shape", train_samples.shape, "\ntrain_labels.shape", train_labels.shape)
+    print("validation_samples.shape" , validation_samples.shape, "\nvalidation_labels.shape", validation_labels.shape)
       
-#     show.plot_images(samples, labels.reshape(-1,).tolist())
+    # show.plot_images(samples, labels.reshape(-1,).tolist())
      
     file_io.FileHDF5().write(train_samples, "train.hdf5", "images", "w", dtype="uint8")
     file_io.FileHDF5().write(train_labels, "train.hdf5", "labels", "a", dtype="int")
