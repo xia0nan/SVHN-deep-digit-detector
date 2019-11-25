@@ -15,10 +15,14 @@ RECOGNIZER_FILE = 'recognize_model.hdf5'
 
 if __name__ == "__main__":
 
+    print("loading images_train...")
     images_train = file_io.FileHDF5().read(os.path.join(DIR, "train.hdf5"), "images")
+    print("loading labels_train...")
     labels_train = file_io.FileHDF5().read(os.path.join(DIR, "train.hdf5"), "labels")
 
+    print("loading images_val...")
     images_val = file_io.FileHDF5().read(os.path.join(DIR, "val.hdf5"), "images")
+    print("loading labels_val...")
     labels_val = file_io.FileHDF5().read(os.path.join(DIR, "val.hdf5"), "labels")
     print("Finish loading hdf5")
 
