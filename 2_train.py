@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     images_val = file_io.FileHDF5().read(os.path.join(DIR, "val.hdf5"), "images")
     labels_val = file_io.FileHDF5().read(os.path.join(DIR, "val.hdf5"), "labels")
+    print("Finish loading hdf5")
 
     # Train detector
     X_train, X_val, Y_train, Y_val, mean_value = preproc.GrayImgTrainPreprocessor().run(images_train, labels_train, images_val, labels_val, 2)
