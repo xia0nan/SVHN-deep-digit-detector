@@ -7,7 +7,7 @@ from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 
 
-def train_detector(X_train, X_test, Y_train, Y_test, nb_filters = 32, batch_size=128, nb_epoch=5, nb_classes=2, do_augment=False, save_file='models/detector_model.hdf5'):
+def train_detector(X_train, X_test, Y_train, Y_test, nb_filters = 32, batch_size=64, nb_epoch=5, nb_classes=2, do_augment=False, save_file='models/detector_model.hdf5'):
     """ vgg-like deep convolutional network """
     
     np.random.seed(1337)  # for reproducibility
