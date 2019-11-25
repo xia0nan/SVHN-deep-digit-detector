@@ -13,6 +13,7 @@ import digit_detector.region_proposal as rp
 
 N_IMAGES = None
 DIR = '../datasets/svhn/train'
+SVHN_DIR = '../datasets/svhn'
 ANNOTATION_FILE = "../datasets/svhn/train/digitStruct.json"
 NEG_OVERLAP_THD = 0.05
 POS_OVERLAP_THD = 0.6
@@ -38,11 +39,11 @@ if __name__ == "__main__":
       
     # show.plot_images(samples, labels.reshape(-1,).tolist())
      
-    file_io.FileHDF5().write(train_samples, os.path.join(DIR, "train.hdf5"), "images", "w", dtype="uint8")
-    file_io.FileHDF5().write(train_labels, os.path.join(DIR, "train.hdf5"), "labels", "a", dtype="int")
+    file_io.FileHDF5().write(train_samples, os.path.join(SVHN_DIR, "train.hdf5"), "images", "w", dtype="uint8")
+    file_io.FileHDF5().write(train_labels, os.path.join(SVHN_DIR, "train.hdf5"), "labels", "a", dtype="int")
  
-    file_io.FileHDF5().write(validation_samples, os.path.join(DIR, "val.hdf5"), "images", "w", dtype="uint8")
-    file_io.FileHDF5().write(validation_labels, os.path.join(DIR, "val.hdf5"), "labels", "a", dtype="int")
+    file_io.FileHDF5().write(validation_samples, os.path.join(SVHN_DIR, "val.hdf5"), "images", "w", dtype="uint8")
+    file_io.FileHDF5().write(validation_labels, os.path.join(SVHN_DIR, "val.hdf5"), "labels", "a", dtype="int")
      
     # (457723, 32, 32, 3) (457723, 1)
     # (113430, 32, 32, 3) (113430, 1)
