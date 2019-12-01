@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # 3. Evaluate average precision     
     evaluator = eval.Evaluator(det, annotator, rp.OverlapCalculator())
     recall, precision, f1_score = evaluator.run(img_files)
-    # recall value : 0.513115508514, precision value : 0.714285714286, f1_score : 0.597214783074
+    # recall value : 0.1757938334100322, precision value : 0.18070009460737937, f1_score : 0.1782132027058549
     
     # 4. Evaluate MSER
     detector = cls.TrueBinaryClassifier(input_shape=model_input_shape)
@@ -55,4 +55,4 @@ if __name__ == "__main__":
     det = detect.DigitSpotter(detector, recognizer, proposer)
     evaluator = eval.Evaluator(det, annotator, rp.OverlapCalculator())
     recall, precision, f1_score = evaluator.run(img_files, do_nms=False)
-    #recall value : 0.630004601933, precision value : 0.0452547023239, f1_score : 0.0844436220084
+    # recall value : 0.7165209387942936, precision value : 0.015586989818902604, f1_score : 0.030510268067095156
